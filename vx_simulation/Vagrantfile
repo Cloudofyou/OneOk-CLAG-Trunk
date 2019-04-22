@@ -10,7 +10,6 @@
 #       -Virtualbox installed: https://www.virtualbox.org/wiki/Downloads
 
 
-
 Vagrant.require_version ">= 2.0.2"
 
 # Fix for Older versions of Vagrant to Grab Images from the Correct Location
@@ -115,7 +114,7 @@ Vagrant.configure("2") do |config|
 
 
     device.vm.provider "virtualbox" do |vbox|
-      vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all', "--nictype2", "virtio"]
+      vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
       vbox.customize ["modifyvm", :id, "--nictype1", "virtio"]
     end
 
