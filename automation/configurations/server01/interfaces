@@ -28,10 +28,10 @@ iface bond0 inet manual
 
 auto bond0.160
 iface bond0.160 inet static
-  address 10.1.212.100
-  netmask 255.255.255.0
-  gateway 10.1.212.1
-  vlan-raw-device bond0
+    address 10.1.212.100
+    netmask 255.255.255.0
+    gateway 10.1.212.1
+    vlan-raw-device bond0
 
 auto bond0.161
 iface bond0.161 inet static
