@@ -42,17 +42,23 @@ if [ "$?" == "0" ]; then
     echo -e "DEVICE=eth0\nBOOTPROTO=dhcp\nONBOOT=yes" > /etc/sysconfig/network-scripts/ifcfg-eth0
 fi
 
+## Glenns temp
+sudo apt-get install vlan -qy
+sudo modprobe 8021q
+sudo su -c 'echo "8021q" >> /etc/modules'
+## End of temp
+
 ## Atilla's Rec - fixing the SSH Key issues:
-sudo su
-useradd cumulus -m -s /bin/bash
-echo "cumulus:CumulusLinux!" | chpasswd
+# sudo su
+# useradd cumulus -m -s /bin/bash
+# echo "cumulus:CumulusLinux!" | chpasswd
 usermod -aG sudo cumulus
 echo "cumulus ALL=(ALL) NOPASSWD:ALL" | tee --append /etc/sudoers.d/20_cumulus
 
 SSH_URL="http://192.168.200.254/authorized_keys"
 #Setup SSH key authentication for Ansible
 mkdir -p /home/cumulus/.ssh
-#wget -O /home/cumulus/.ssh/authorized_keys $SSH_URL
+# wget -O /home/cumulus/.ssh/authorized_keys $SSH_URL
 chown -R cumulus:cumulus /home/cumulus/.ssh
 
 echo "#################################"
