@@ -43,9 +43,9 @@ if [ "$?" == "0" ]; then
 fi
 
 ## Glenns temp
-sudo apt-get install vlan -qy
-sudo modprobe 8021q
-sudo su -c 'echo "8021q" >> /etc/modules'
+# sudo apt-get install vlan -qy
+# sudo modprobe 8021q
+# sudo su -c 'echo "8021q" >> /etc/modules'
 ## End of temp
 
 ## Atilla's Rec - fixing the SSH Key issues:
