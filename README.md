@@ -11,6 +11,9 @@ Get VRR/CLAG to trunk to downstream ESXi hosts with 2 VLANs
 ### Setup
 
 ```
+git clone https://github.com/cloudofyou/OneOk-CLAG-Trunk
+cd OneOk-CLAG-Trunk
+./bringitup
 cd vx-simulation
 vagrant ssh oob-mgmt-server
 ssh server01
