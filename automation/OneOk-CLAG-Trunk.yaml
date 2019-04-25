@@ -74,7 +74,7 @@
          - add bond bond01 bridge trunk vlans 70,160-161
          - add bond bond02 bond slaves swp2
          - add bond bond02 clag id 2
-         - add bond bond02 bridge trunks vlans 70,160-161
+         - add bond bond02 bridge trunk vlans 70,160-161
 
        commit: true
 
